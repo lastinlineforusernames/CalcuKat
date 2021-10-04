@@ -1,0 +1,103 @@
+.App {
+  text-align: center;
+  font-family: 'Rajdhani', sans-serif;
+  font-size: xx-large;
+  justify-content: center;
+  background-color: #425;
+  background-image: linear-gradient(to top, #425, #357)
+}
+
+.wrapper {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+  gap: 0;
+  grid-template-areas:
+    "display display display display"
+    "seven eight nine add"
+    "four five six subtract"
+    "one two three multiply"
+    "zero zero decimal divide"
+    "clear clear equals equals";
+  justify-content: center;
+  align-items: center;
+}
+
+.display { 
+  display: grid;
+  grid-area: display;
+  width: 300px; 
+  height: 75px;
+  background-color: #222;
+  color: #ddd;
+  outline: 2px solid #111;
+  border: none;
+  justify-content: right;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 0 20px
+}
+
+.button {
+  display: grid;
+  width: 75px;
+  height: 73px;
+  outline: 2px solid #111;
+  border: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.wide-button {
+  display: grid;
+  width: 150px;
+  height: 73px;
+  outline: 2px solid #111;
+  border: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.number {
+  background-color: #666;
+}
+
+.function {
+  background-color: #962;
+}
+
+.ac {
+  background-color: #522;
+  color: #ddd;
+}
+
+.clicked {
+  background-color: #111;
+  color: #ddd;
+}
+
+#one { grid-area: one; }
+#two { grid-area: two; }
+#three { grid-area: three; }
+#four { grid-area: four; }
+#five { grid-area: five; }
+#six { grid-area: six; }
+#seven { grid-area: seven; }
+#eight { grid-area: eight; }
+#nine { grid-area: nine; }
+#zero { grid-area: zero; }
+#decimal { grid-area: decimal; }
+#clear { grid-area: clear; }
+#add { grid-area: add; }
+#subtract { grid-area: subtract; }
+#multiply { grid-area: multiply; }
+#divide { grid-area: divide; }
+#blank { grid-area: blank; }
+#equals { grid-area: equals; }

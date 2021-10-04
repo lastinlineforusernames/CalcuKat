@@ -1,0 +1,44 @@
+{
+  "files": {
+    "package.json": [
+      {
+        "id": "e94d00cf-a789-4f9f-9c11-6e37e091d7d7",
+        "line": 4,
+        "version": 19,
+        "index": 50
+      },
+      {
+        "id": "56f5745f-fef7-4ebe-b0d9-70f8dc735ed8",
+        "line": 7,
+        "version": 19,
+        "index": 125
+      },
+      {
+        "id": "05627b8e-a906-4a47-8298-a3abfa83d771",
+        "line": 7,
+        "version": 19,
+        "index": 125
+      },
+      {
+        "id": "5260f635-59a2-426f-8868-0a5ac1029d02",
+        "line": 16,
+        "version": 19,
+        "index": 351
+      },
+      {
+        "id": "dfa4294e-57a3-4462-9000-b3d90535e5db",
+        "line": 16,
+        "version": 19,
+        "index": 351
+      }
+    ],
+    "src/App.jsx": [
+      {
+        "id": "3150d99a-bc21-4c28-9c2b-8cdf8d4fb6b6",
+        "line": 1,
+        "version": 1471,
+        "index": 0
+      }
+    ]
+  }
+}
