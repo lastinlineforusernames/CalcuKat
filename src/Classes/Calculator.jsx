@@ -65,14 +65,18 @@ export default class Calculator extends React.Component {
   }
 
   handleOperation(value) {
-    if (this.state.operationClicked) {
+    let { operationClicked, 
+          operation,
+          storedInput,
+          input } = this.state;
+    if (operationClicked) {
       this.setState({
         operation: value,
         operationClicked: true
       });
-    } else if (this.state.operation != null) {
-      var result = eval(this.state.storedInput + this.state.operation + this.state.input);
-      result = Math.round((result + Number.EPSILON) * 1000000000) / 1000000000
+    } else if (operation != null) {
+      var result = eval(storedInput + operation + input);
+      result = Math.round((result + Number.EPSILON) * 1000000000) / 1000000000;
       this.setState({
         input: result,
         storedInput: result,
@@ -83,7 +87,7 @@ export default class Calculator extends React.Component {
       });
     } else {
       this.setState({
-        storedInput: eval(this.state.input),
+        storedInput: eval(input),
         operation: value,
         decimalClicked: false,
         operationClicked: true
@@ -92,8 +96,11 @@ export default class Calculator extends React.Component {
   }
 
   handleDecimal(value) {
-    if (this.state.decimalClicked) return;
-    if (this.state.input === 0 || this.state.operationClicked) {
+    let { decimalClicked, 
+          operationClicked,
+          input } = this.state;
+    if (decimalClicked) return;
+    if (input === 0 || operationClicked) {
       this.setState({
         input: "0" + value,
         decimalClicked: true,
@@ -101,7 +108,7 @@ export default class Calculator extends React.Component {
       });
     } else {
       this.setState({
-        input: this.state.input + value,
+        input: input + value,
         decimalClicked: true,
         operationClicked: false
       })
@@ -109,34 +116,40 @@ export default class Calculator extends React.Component {
   }
 
   handleNumbers(value) {
-    if (this.state.input === 0) {
+    let { receivedAnswer,
+          operationClicked,
+          input } = this.state;
+    if (input === 0) {
       this.setState({
         input: value,
         operationClicked: false
       });
-    } else if (this.state.receivedAnswer) {
+    } else if (receivedAnswer) {
       this.setState({
         input: value,
         receivedAnswer: false,
         operationClicked: false
       });
-    } else if (this.state.operationClicked) {
+    } else if (operationClicked) {
       this.setState({
         input: value,
         operationClicked: false
       });
     } else {
       this.setState({
-        input: this.state.input + value,
+        input: input + value,
         operationClicked: false
       });
     }
   }
 
   calculateAnswer() {
-    if (this.state.operation === null || this.state.storedInput === null) return;
-    var result = eval(this.state.storedInput + this.state.operation + this.state.input);
-    result = Math.round((result + Number.EPSILON) * 1000000000) / 1000000000
+    let { operation,
+          storedInput,
+          input } = this.state;
+    if (operation === null || storedInput === null) return;
+    var result = eval(storedInput + operation + input);
+    result = Math.round((result + Number.EPSILON) * 1000000000) / 1000000000;
     this.setState({
       input: result,
       storedInput: result,
@@ -175,6 +188,6 @@ export default class Calculator extends React.Component {
           <Button id="Enter" className="tall function" value="=" handleClick={this.handleClick} />
         </div>
       </div>
-    )
+    );
   }
 }

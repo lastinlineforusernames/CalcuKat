@@ -5,9 +5,8 @@ export default class Display extends React.Component {
     super(props);
   }
 
-
   render() {
-    return(
+    return (
       <div id="display" className="display">
         <div id="answer">
           {this.props.answer}
