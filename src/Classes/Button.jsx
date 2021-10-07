@@ -10,19 +10,22 @@ export default class Button extends React.Component {
   };
 
   render() {
-    var label
-    if (this.props.id === "Enter") {
+    let { id, 
+          className, 
+          value } = this.props;
+    var label = null;
+    if (id === "Enter") {
       label = "=";
-    } else if (this.props.id === "Escape") {
+    } else if (id === "Escape") {
       label = "AC";
     } else {
-      label = this.props.id
+      label = id
     }
-    return(
-      <div id={this.props.id}
-           name={this.props.id}
-           className={`button ${this.props.className}`} 
-           data-value={this.props.value} 
+    return (
+      <div id={id}
+           name={id}
+           className={`button ${className}`} 
+           data-value={value} 
            onClick={e => this.click(e)}>
         {label}
       </div>
