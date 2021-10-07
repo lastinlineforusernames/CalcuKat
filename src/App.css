@@ -16,18 +16,20 @@
 
 .grid-container {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(6, 1fr);
+  grid-template-columns: repeat(4, 75px);
+  grid-template-rows: repeat(6, 75px);
   gap: 0;
   grid-template-areas:
     "display display display display"
+    "clear divide multiply subtract"
     "seven eight nine add"
-    "four five six subtract"
-    "one two three multiply"
-    "zero zero decimal divide"
-    "clear clear equals equals";
+    "four five six add"
+    "one two three equals"
+    "zero zero decimal equals";
   justify-content: center;
   align-items: center;
+  outline: 2px solid #000;
+  background: #000;
 }
 
 .display { 
@@ -37,32 +39,36 @@
   height: 75px;
   background-color: #222;
   color: #ddd;
-  outline: 2px solid #111;
+  outline: 1px solid #111;
+  outline-offset: -1px;
   border: none;
   justify-content: right;
   align-items: center;
   box-sizing: border-box;
-  padding: 0 20px
+  padding: 0 10px;
+  font-size: xxx-large;
+  user-select: none;
 }
 
 .button {
   display: grid;
   width: 75px;
-  height: 73px;
-  outline: 2px solid #111;
+  height: 75px;
+  outline-offset: -1px;
+  outline: 1px solid #111;
   border: none;
   justify-content: center;
   align-items: center;
+  user-select: none;
 }
 
-.wide-button {
-  display: grid;
+.wide {
   width: 150px;
-  height: 73px;
-  outline: 2px solid #111;
-  border: none;
-  justify-content: center;
-  align-items: center;
+}
+
+.tall {
+  height: 150px;
+
 }
 
 .number {
@@ -83,21 +89,20 @@
   color: #ddd;
 }
 
-#one { grid-area: one; }
-#two { grid-area: two; }
-#three { grid-area: three; }
-#four { grid-area: four; }
-#five { grid-area: five; }
-#six { grid-area: six; }
-#seven { grid-area: seven; }
-#eight { grid-area: eight; }
-#nine { grid-area: nine; }
-#zero { grid-area: zero; }
-#decimal { grid-area: decimal; }
-#clear { grid-area: clear; }
-#add { grid-area: add; }
-#subtract { grid-area: subtract; }
-#multiply { grid-area: multiply; }
-#divide { grid-area: divide; }
-#blank { grid-area: blank; }
-#equals { grid-area: equals; }
+div[name="1"] { grid-area: one; }
+div[name="2"] { grid-area: two; }
+div[name="3"] { grid-area: three; }
+div[name="4"] { grid-area: four; }
+div[name="5"] { grid-area: five; }
+div[name="6"] { grid-area: six; }
+div[name="7"] { grid-area: seven; }
+div[name="8"] { grid-area: eight; }
+div[name="9"] { grid-area: nine; }
+div[name="0"] { grid-area: zero; }
+div[name="."] { grid-area: decimal; }
+div[name="Escape"] { grid-area: clear; }
+div[name="+"] { grid-area: add; }
+div[name="-"] { grid-area: subtract; }
+div[name="*"] { grid-area: multiply; }
+div[name="/"] { grid-area: divide; }
+div[name="Enter"] { grid-area: equals; }
