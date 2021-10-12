@@ -21,8 +21,8 @@
   gap: 0;
   grid-template-areas:
     "display display display display"
-    "clear divide multiply subtract"
-    "seven eight nine add"
+    "clear back divide multiply"
+    "seven eight nine subtract"
     "four five six add"
     "one two three equals"
     "zero zero decimal equals";
@@ -45,9 +45,14 @@
   justify-content: right;
   align-items: center;
   box-sizing: border-box;
-  padding: 0 10px;
+  padding: 0 15px;
   font-size: xxx-large;
   user-select: none;
+}
+
+#answer {
+  width: 275px;
+  height: 60px;
 }
 
 .button {
@@ -100,6 +105,7 @@ div[name="9"] { grid-area: nine; }
 div[name="0"] { grid-area: zero; }
 div[name="."] { grid-area: decimal; }
 div[name="Escape"] { grid-area: clear; }
+div[name="Backspace"] { grid-area: back; }
 div[name="+"] { grid-area: add; }
 div[name="-"] { grid-area: subtract; }
 div[name="*"] { grid-area: multiply; }

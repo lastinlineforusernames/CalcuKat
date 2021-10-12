@@ -18,6 +18,8 @@ export default class Button extends React.Component {
       label = "=";
     } else if (id === "Escape") {
       label = "AC";
+    } else if (id === "Backspace") {
+      label = "C";
     } else {
       label = id
     }
