@@ -107,19 +107,22 @@ export default class Calculator extends React.Component {
   handleDecimal(value) {
     let { decimalClicked, 
           operationClicked,
+          receivedAnswer,
           input } = this.state;
     if (decimalClicked) return;
-    if (input === 0 || input === "0" || operationClicked) {
+    if (input === 0 || input === "0" || operationClicked || receivedAnswer) {
       this.setState({
         input: "0" + value,
         decimalClicked: true,
-        operationClicked: false
+        operationClicked: false,
+        receivedAnswer: false
       });
     } else {
       this.setState({
         input: input + value,
         decimalClicked: true,
-        operationClicked: false
+        operationClicked: false,
+        receivedAnswer: false
       });
     } 
   }

@@ -3,7 +3,6 @@ import React from 'react';
 export default class LinkButton extends React.Component {
   constructor(props) {
     super(props);
-    // this.click = this.click.bind(this);
   };
 
   click(e) {
