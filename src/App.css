@@ -4,12 +4,15 @@
   font-size: xx-large;
   justify-content: center;
   background-color: #425;
-  background-image: linear-gradient(to top, #425, #357)
+  background-image: linear-gradient(to top, #425, #357);
+  background-repeat: no-repeat;
 }
 
 .wrapper {
   height: 100vh;
   display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
@@ -111,3 +114,22 @@ div[name="-"] { grid-area: subtract; }
 div[name="*"] { grid-area: multiply; }
 div[name="/"] { grid-area: divide; }
 div[name="Enter"] { grid-area: equals; }
+
+.linkbutton {
+  flex-direction: column;
+  padding: 3px 10px 3px 8px;
+  border-radius: 4px;
+  background-color: #666;
+  background-image: linear-gradient(to bottom, #ddd, #999);
+  background-repeat: no-repeat;
+  border: none;
+  color: #111;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.linkbutton:active {
+  background-color: #222;
+  background-image: linear-gradient(to bottom, #222, #111);
+  color: #ddd;
+}

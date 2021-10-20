@@ -1,6 +1,7 @@
 import React from 'react';
 import Display from './Display';
 import Button from './Button';
+import LinkButton from './LinkButton';
 
 var clearState = {
   input: '0',
@@ -72,7 +73,6 @@ export default class Calculator extends React.Component {
       default:
         this.handleNumbers(value);
     }
-    // console.log(this.state);
   }
 
   handleOperation(value) {
@@ -218,6 +218,9 @@ export default class Calculator extends React.Component {
           <Button id="/" className="function" value="/" handleClick={this.handleClick} />
           <Button id="Enter" className="tall function" value="=" handleClick={this.handleClick} />
         </div>
+        <LinkButton id="github" 
+                    url="https://github.com/lastinlineforusernames/Simple-React-Calculator"
+                    text="View on GitHub" />
       </div>
     );
   }
